@@ -1,0 +1,223 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI_Scenes/Options.gd" type="Script" id=1]
+[ext_resource path="res://UI_Scenes/Vsync_Button.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -348.0
+margin_right = 448.0
+margin_bottom = 356.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+margin_right = 960.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+margin_right = 478.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Video_Settings" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 478.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Video Settings"
+align = 1
+
+[node name="Vsync_Button" type="CheckButton" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 478.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "VSync"
+script = ExtResource( 3 )
+
+[node name="Screenmode_Button" type="OptionButton" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 62.0
+margin_right = 478.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Windowed"
+items = [ "Windowed", null, false, 0, null, "Fullscreen", null, false, 1, null, "Borderless", null, false, 2, null ]
+selected = 0
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 86.0
+margin_right = 478.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Graphics Settings"
+align = 1
+valign = 2
+
+[node name="SSAO_Button" type="CheckButton" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 104.0
+margin_right = 478.0
+margin_bottom = 144.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "SSAO"
+
+[node name="Bloom_Button" type="CheckButton" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 148.0
+margin_right = 478.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bloom"
+
+[node name="Light_Button" type="CheckButton" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 192.0
+margin_right = 478.0
+margin_bottom = 232.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "Lighting"
+
+[node name="DOF_Button" type="CheckButton" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 236.0
+margin_right = 478.0
+margin_bottom = 276.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Depth of Field"
+
+[node name="MSAA_Container" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 280.0
+margin_right = 478.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="MSAA_Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/MSAA_Container"]
+margin_right = 237.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "MSAA"
+
+[node name="MSAA_Button" type="OptionButton" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/MSAA_Container"]
+margin_left = 241.0
+margin_right = 478.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Disabled"
+items = [ "Disabled", null, false, 0, null, "2x", null, false, 1, null, "4x", null, false, 2, null, "8x", null, false, 3, null, "16x", null, false, 4, null ]
+selected = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+margin_left = 482.0
+margin_right = 960.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 478.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Gameplay Settings
+"
+align = 1
+
+[node name="Mouse_Sens_Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 50.0
+margin_right = 478.0
+margin_bottom = 97.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Mouse Sensitivty"
+
+[node name="Mouse_Sens_Slider" type="HSlider" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 101.0
+margin_right = 478.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 0.1
+step = 0.005
+value = 0.05
+tick_count = 20
+
+[node name="Joy_Sens_Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 152.0
+margin_right = 478.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Joystick Sensitivity"
+
+[node name="Joy_Sens_Slider" type="HSlider" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 202.0
+margin_right = 478.0
+margin_bottom = 249.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 70.0
+max_value = 270.0
+step = 10.0
+value = 170.0
+rounded = true
+tick_count = 20
+
+[node name="Invert_Button" type="CheckButton" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 253.0
+margin_right = 478.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Invert Y"
+
+[node name="Control" type="Control" parent="ColorRect/VBoxContainer"]
+margin_top = 304.0
+margin_right = 960.0
+margin_bottom = 502.0
+size_flags_vertical = 3
+
+[node name="Exit" type="Button" parent="ColorRect/VBoxContainer"]
+margin_top = 506.0
+margin_right = 960.0
+margin_bottom = 704.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Save Settings"
+
+[connection signal="toggled" from="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/Vsync_Button" to="." method="_on_Vsync_Button_toggled"]
+[connection signal="item_selected" from="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/Screenmode_Button" to="." method="_on_Screenmode_Button_item_selected"]
+[connection signal="toggled" from="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/SSAO_Button" to="." method="_on_SSAO_Button_toggled"]
+[connection signal="toggled" from="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/Bloom_Button" to="." method="_on_CheckButton_toggled"]
+[connection signal="toggled" from="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/Light_Button" to="." method="_on_Light_Button_toggled"]
+[connection signal="toggled" from="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/DOF_Button" to="." method="_on_DOF_Button_toggled"]
+[connection signal="item_selected" from="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/MSAA_Container/MSAA_Button" to="." method="_on_MSAA_Button_item_selected"]
+[connection signal="value_changed" from="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer2/Mouse_Sens_Slider" to="." method="_on_Mouse_Sens_Slider_value_changed"]
+[connection signal="value_changed" from="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer2/Joy_Sens_Slider" to="." method="_on_HSlider_value_changed"]
+[connection signal="toggled" from="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer2/Invert_Button" to="." method="_on_Invert_Button_toggled"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
